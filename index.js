@@ -16,9 +16,9 @@ const displayEntries = () => {
     .map((entry) => {
       const namecell = `<td>${entry.name}</td>`;
       const emailcell = `<td>${entry.email}</td>`;
-      const pswdcell = `<td>${entry.pswd}</td>`;
+      const pswdcell = `<td>${entry.password}</td>`;
       const dobcell = `<td>${entry.dob}</td>`;
-      const acceptTermscell = `<td>${entry.accepted ? "yes" : "no"}</td>`;
+      const acceptTermscell = `<td>${entry.acceptTerms ? "yes" : "no"}</td>`;
 
       const row = `<tr>
          
@@ -63,18 +63,18 @@ function validate(element) {
 
 const saveForm = (event) => {
   event.preventDefault();
-  const name = document.getElementById("Name").value;
-  const dob = document.getElementById("Dob").value;
-  const email = document.getElementById("Email").value;
-  const pswd = document.getElementById("Password").value;
-  const accepted = document.getElementById("acceptTerms").checked;
+  const name = document.getElementById("name").value;
+  const dob = document.getElementById("dob").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const acceptTerms = document.getElementById("acceptTerms").checked;
 
   const entry = {
     name,
     dob,
     email,
-    pswd,
-    accepted,
+    password,
+    acceptTerms,
   };
   userEntries.push(entry);
   sessionStorage.setItem("userEntries", JSON.stringify(userEntries));
