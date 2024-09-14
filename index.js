@@ -46,8 +46,8 @@ let userEntries = getEntries();
 
 const dateIn = document.getElementById("dob");
 dateIn.addEventListener("input", () => validate(dateIn));
-const oldestDate = new Date("1969-09-12");
-const latestDate = new Date("2006-09-11");
+const oldestDate = new Date("1969-09-14");
+const latestDate = new Date("2006-09-13");
 
 function validate(element) {
   const userDate = new Date(element.value);
