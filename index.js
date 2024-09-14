@@ -18,7 +18,7 @@ const displayEntries = () => {
       const emailcell = `<td>${entry.email}</td>`;
       const pswdcell = `<td>${entry.password}</td>`;
       const dobcell = `<td>${entry.dob}</td>`;
-      const acceptTermscell = `<td>${entry.acceptTerms ? "true" : "false" }</td>`;
+      const acceptTermscell = `<td>${entry.acceptTerms ? "True" : "False"}</td>`;
 
       const row = `<tr>
          
@@ -63,17 +63,16 @@ function validate(element) {
 
 const saveForm = (event) => {
   event.preventDefault();
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = document.getElementById("email").value;
-  
+
   if (!emailPattern.test(email)) {
     alert("Please enter a valid email address.");
-    return;  // Stop form submission
+    return; // Stop form submission
   }
-  
   const name = document.getElementById("name").value;
   const dob = document.getElementById("dob").value;
-  const email = document.getElementById("email").value;
+
   const password = document.getElementById("password").value;
   const acceptTerms = document.getElementById("acceptTerms").checked;
 
