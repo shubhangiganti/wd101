@@ -41,25 +41,24 @@ const displayEntries = () => {
   let details = document.getElementById("user-Entries");
   details.innerHTML = table;
 };
-
-let userEntries = getEntries();
-
 const dateIn = document.getElementById("dob");
-dateIn.addEventListener("input", () => validate(dateIn));
 const oldestDate = new Date("1969-09-14");
 const latestDate = new Date("2006-09-13");
 
-function validate(element) {
-  const userDate = new Date(element.value);
+function validate() {
+  const userDate = new Date(dateIn.value);
+
   if (userDate < oldestDate || userDate > latestDate) {
-    element.setCustomValidity(
-      "date must be between 1969-09-12 and 2006-09-11 "
-    );
+    dateIn.setCustomValidity("date must be between 1969-09-12 and 2006-09-11 ");
+    dateIn.reportValidity();
+    return false;
   } else {
-    element.setCustomValidity("");
+    dateIn.setCustomValidity("");
+    return true;
   }
-  element.reportValidity();
 }
+
+dateIn.addEventListener("input", () => validate(dateIn));
 
 const saveForm = (event) => {
   event.preventDefault();
@@ -70,9 +69,14 @@ const saveForm = (event) => {
     alert("Please enter a valid email address.");
     return; // Stop form submission
   }
+
+  if (!validate()) {
+    alert("Your age must be between 18 and 55.");
+    return;
+  }
+
   const name = document.getElementById("name").value;
   const dob = document.getElementById("dob").value;
-
   const password = document.getElementById("password").value;
   const acceptTerms = document.getElementById("acceptTerms").checked;
 
@@ -83,6 +87,7 @@ const saveForm = (event) => {
     password,
     acceptTerms,
   };
+  let userEntries = getEntries();
   userEntries.push(entry);
   sessionStorage.setItem("userEntries", JSON.stringify(userEntries));
   displayEntries();
