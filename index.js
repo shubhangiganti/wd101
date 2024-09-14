@@ -1,13 +1,5 @@
 let userform = document.getElementById("formOfUser");
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const email = document.getElementById("email").value;
-  
-  if (!emailPattern.test(email)) {
-    alert("Please enter a valid email address.");
-    return;  // Stop form submission
-  }
-
 const getEntries = () => {
   let entries = sessionStorage.getItem("userEntries");
   if (entries) {
@@ -71,6 +63,14 @@ function validate(element) {
 
 const saveForm = (event) => {
   event.preventDefault();
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const email = document.getElementById("email").value;
+  
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;  // Stop form submission
+  }
+  
   const name = document.getElementById("name").value;
   const dob = document.getElementById("dob").value;
   const email = document.getElementById("email").value;
