@@ -1,7 +1,7 @@
 let userform = document.getElementById("formOfUser");
 
 const getEntries = () => {
-  let entries = localStorage.getItem("userEntries");
+  let entries = sessionStorage.getItem("userEntries");
   if (entries) {
     entries = JSON.parse(entries);
   } else {
@@ -62,13 +62,13 @@ dateIn.addEventListener("input", () => validate(dateIn));
 
 const saveForm = (event) => {
   event.preventDefault();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  /*const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = document.getElementById("email").value;
 
   if (!emailPattern.test(email)) {
     alert("Please enter a valid email address.");
     return; // Stop form submission
-  }
+  }*/
 
   if (!validate()) {
     alert("Your age must be between 18 and 55.");
@@ -89,7 +89,7 @@ const saveForm = (event) => {
   };
   let userEntries = getEntries();
   userEntries.push(entry);
-  localStorage.setItem("userEntries", JSON.stringify(userEntries));
+  sessionStorage.setItem("userEntries", JSON.stringify(userEntries));
   displayEntries();
 };
 userform.addEventListener("submit", saveForm);
