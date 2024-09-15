@@ -63,7 +63,7 @@ dateIn.addEventListener("input", () => validate(dateIn));
 const saveForm = (event) => {
   event.preventDefault();
   /*const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const email = document.getElementById("email").value;
+  
 
   if (!emailPattern.test(email)) {
     alert("Please enter a valid email address.");
@@ -77,6 +77,7 @@ const saveForm = (event) => {
 
   const name = document.getElementById("name").value;
   const dob = document.getElementById("dob").value;
+  const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const acceptTerms = document.getElementById("acceptTerms").checked;
 
