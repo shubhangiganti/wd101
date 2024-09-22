@@ -4,7 +4,6 @@ input#name:invalid {
 input#name:valid{
     border: 1px solid rgb(147, 207, 26);
 }
-
 body {
     background-image: url(galaxy\ image.jpg);
     background-size: cover;
