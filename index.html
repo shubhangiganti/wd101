@@ -1,58 +1,23 @@
     <html>
         <head>
-            <style>
-                input#name:invalid {
-                    border: 1px solid orangered;
-                }
-                input#name:valid{
-                    border: 1px solid rgb(147, 207, 26);
-                }
-                body {
-                display: grid;
-                place-items: center;
-                }
-
-                form {
-            
-                padding: 20px;
-                border: 10px solid #6f40c6; 
-                width: 300px;
-                margin-bottom: 40px;
-                }
-
-            
-                th, td {
-                    border: 1px solid lightgreen; 
-                    padding: 10px; 
-                    text-align: left; 
-                }
-                
-            
-                
-            </style>
-            <h1>
-                form page
-            </h1>
+            <link rel="stylesheet" href="index.css">
+            <h2>
+                Form Page
+            </h2>
         </head>
         <body>
             <form id="formOfUser" >
-                <label > full name</label><br>
-                <input type="text" id="name" required ><br>
-                <label > pasword</label><br>
-                <input type="password" id="password" required><br>
-                <label > email</label><br>
-                <input type="email" id="email" required><br>
-                <label > DOB</label><br>
-                <input type="date" id="dob" required><br><br>
-                <label > accept terms and conditions?</label>
-                <input type="checkbox" id="acceptTerms" required><br><br>
-                <label > click to submit</label><br>
-                <button type="submit" required> submit </button><br>
-            </form>
-            <div id="user-Entries"></div>
-            
-            <script src="index.js">         
-
-            </script>
+                
+                    <input type="text" id="name" required placeholder="Full name"><br><br>
+                    <input type="password" id="password" required placeholder="Password"><br><br>
+                    <input type="email" id="email" required placeholder="Email"><br><br>
+                    <input type="date" id="dob" required><br><br>
+                    <label >Accept terms and conditions?</label>
+                    <input type="checkbox" id="acceptTerms" required><br><br>
+                    <button type="submit" required> Submit </button><br>
+                    </form>
+                    <div id="user-Entries"></div>
+                    <script src="index.js">         
+                    </script>
         </body>
     </html>
