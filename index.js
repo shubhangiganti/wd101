@@ -1,7 +1,7 @@
 let userform = document.getElementById("formOfUser");
 
 const getEntries = () => {
-  let entries = localStorage.getItem("userEntries");
+  let entries = sessionStorage.getItem("userEntries");
   if (entries) {
     entries = JSON.parse(entries);
   } else {
@@ -28,7 +28,7 @@ const displayEntries = () => {
     })
     .join("\n");
   const table = `<table>
-  <caption>Entries Table</caption>
+  <caption >Entries Table</caption>
     <tr>
       <th>Name</th>
       <th>Email</th>
@@ -90,7 +90,7 @@ const saveForm = (event) => {
   };
   let userEntries = getEntries();
   userEntries.push(entry);
-  localStorage.setItem("userEntries", JSON.stringify(userEntries));
+  sessionStorage.setItem("userEntries", JSON.stringify(userEntries));
   displayEntries();
 };
 userform.addEventListener("submit", saveForm);
