@@ -1,0 +1,85 @@
+input#name:invalid {
+    border: 1px solid orangered;
+}
+input#name:valid{
+    border: 1px solid rgb(147, 207, 26);
+}
+
+body {
+    background-image: url(galaxy\ image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        display: grid;
+        place-items: center;
+}
+
+
+form {
+
+padding: 20px;
+border: 8px aliceblue;
+width: 350px;
+margin-bottom: 40px;
+box-shadow: 50px aliceblue;
+border-radius: 20px;
+box-shadow: 0 0 20px aliceblue;
+
+}
+input::placeholder {
+    color: white;
+    opacity: 0.8;
+    
+}
+
+
+th, td {
+    border: 2px solid gray; 
+    padding: 10px; 
+    text-align: center; 
+    color:aliceblue;
+    font-size:small;
+    border-radius: 10px;
+}
+h2{
+    text-shadow: 10px;
+    color: aliceblue;
+    
+}
+label{
+    color: aliceblue;
+    font-size:medium;
+}
+caption{
+    color: antiquewhite;
+    font-size: large;
+}
+input,button {
+    align-items: center;
+    width: 300px;
+    padding: 10px;
+    margin: 1px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent; 
+    color: white;
+    
+}
+
+input[type="checkbox"] {
+   
+    width: 20px;
+    height: 20px;
+    accent-color: white; 
+    
+}
+
+
+
+
+
+
+
+
+
+
