@@ -70,6 +70,11 @@ const saveForm = (event) => {
     return; // Stop form submission
   }*/
 
+  if (!form.checkValidity()) {
+    form.reportValidity(); // This will show the default browser error messages
+    return; // Stop the form submission
+  }
+
   if (!validate()) {
     alert("Your age must be between 18 and 55.");
     return;
