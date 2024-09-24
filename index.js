@@ -1,7 +1,7 @@
 let userform = document.getElementById("formOfUser");
 
 const getEntries = () => {
-  let entries = sessionStorage.getItem("userEntries");
+  let entries = localStorage.getItem("userEntries");
   if (entries) {
     entries = JSON.parse(entries);
   } else {
@@ -70,8 +70,6 @@ const saveForm = (event) => {
     return; // Stop form submission
   }*/
 
- 
-
   if (!validate()) {
     alert("Your age must be between 18 and 55.");
     return;
@@ -92,7 +90,7 @@ const saveForm = (event) => {
   };
   let userEntries = getEntries();
   userEntries.push(entry);
-  sessionStorage.setItem("userEntries", JSON.stringify(userEntries));
+  localStorage.setItem("userEntries", JSON.stringify(userEntries));
   displayEntries();
 };
 userform.addEventListener("submit", saveForm);
